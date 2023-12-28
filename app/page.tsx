@@ -2,14 +2,67 @@ import Image from 'next/image';
 import { headerData } from '@/lib/const';
 import Link from 'next/link';
 import { Facebook, Instagram } from 'lucide-react';
+import { useEffect } from 'react';
 
 export default function Home() {
   const { companyName, companyCaption, companySelfDefinition, companyHistory } =
     headerData;
   const words = companyCaption.split(' ');
   const extractedText = words.slice(1).join(' ');
+
+  // useEffect(() => {
+  //   // Make sure to check if document is defined before using it
+  //   const hamburger = document.querySelector(`#hamburger`);
+  //
+  //   if (hamburger) {
+  //     hamburger.addEventListener('click', function () {
+  //       hamburger.classList.toggle(`hamburger-active`);
+  //       console.log(`clicked`);
+  //     });
+  //   }
+  //
+  //   // Clean up the event listener when the component is unmounted
+  //   return () => {
+  //     if (hamburger) {
+  //       hamburger.removeEventListener('click', function () {
+  //         hamburger.classList.toggle(`hamburger-active`);
+  //       });
+  //     }
+  //   };
+  // }, [document.querySelector(`#hamburger`)]);
   return (
     <>
+      {/*header Start */}
+      <header
+        className={`absolute left-0 top-0 z-10 flex w-full items-center bg-transparent`}
+      >
+        <div className={`container`}>
+          <div className={`relative flex items-center justify-between`}>
+            <div className={`px-4`}>
+              <Link
+                href={`#home`}
+                className={`text-primary block py-6 text-lg font-bold`}
+              >
+                logo KEA
+              </Link>
+            </div>
+            <div className={`flex items-center px-4`}>
+              <button
+                id={'hamburger'}
+                name={`hamburger`}
+                type={`button`}
+                className={`absolute right-4 block`}
+              >
+                <span className={`hamburger-line`}></span>
+                <span className={`hamburger-line`}></span>
+                <span className={`hamburger-line`}></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      {/*header Finish */}
+
       {/* section hero start */}
       <section id={`home`} className={`pt-36`}>
         <div className={`container`}>
