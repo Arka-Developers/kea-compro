@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import { headerData } from '@/lib/const';
 import Link from 'next/link';
@@ -10,26 +11,39 @@ export default function Home() {
   const words = companyCaption.split(' ');
   const extractedText = words.slice(1).join(' ');
 
-  // useEffect(() => {
-  //   // Make sure to check if document is defined before using it
-  //   const hamburger = document.querySelector(`#hamburger`);
-  //
-  //   if (hamburger) {
-  //     hamburger.addEventListener('click', function () {
-  //       hamburger.classList.toggle(`hamburger-active`);
-  //       console.log(`clicked`);
-  //     });
-  //   }
-  //
-  //   // Clean up the event listener when the component is unmounted
-  //   return () => {
-  //     if (hamburger) {
-  //       hamburger.removeEventListener('click', function () {
-  //         hamburger.classList.toggle(`hamburger-active`);
-  //       });
-  //     }
-  //   };
-  // }, [document.querySelector(`#hamburger`)]);
+  useEffect(() => {
+    window.onscroll = function () {
+      const header = document.querySelector(`header`);
+      const fixedNav = header.offsetTop;
+
+      if (window.pageYOffset > fixedNav) {
+        header.classList.add('navbar-fixed');
+      } else {
+        header.classList.remove('navbar-fixed');
+      }
+    };
+  }, [window]);
+
+  useEffect(() => {
+    // Make sure to check if document is defined before using it
+    const hamburger = document.querySelector(`#hamburger`);
+    const navMenu = document.querySelector(`#nav-menu`);
+
+    if (hamburger) {
+      hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle(`hamburger-active`);
+        navMenu.classList.toggle(`hidden`);
+        console.log(`clicked`);
+      });
+    }
+
+    // Clean up the event listener when the component is unmounted
+    // return () => {
+    //   hamburger.removeEventListener('click', function () {
+    //     hamburger.classList.toggle(`hamburger-active`);
+    //   });
+    // };
+  }, []);
   return (
     <>
       {/*header Start */}
@@ -53,10 +67,63 @@ export default function Home() {
                 type={`button`}
                 className={`absolute right-4 block`}
               >
-                <span className={`hamburger-line`}></span>
-                <span className={`hamburger-line`}></span>
-                <span className={`hamburger-line`}></span>
+                <span
+                  className={`hamburger-line origin-top-left transition duration-300 ease-in-out`}
+                ></span>
+                <span
+                  className={`hamburger-line transition duration-300 ease-in-out`}
+                ></span>
+                <span
+                  className={`hamburger-line origin-bottom-left transition duration-300 ease-in-out`}
+                ></span>
               </button>
+              <nav
+                id={`nav-menu`}
+                className={`absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg`}
+              >
+                <ul className={`block`}>
+                  <li className={`group`}>
+                    <Link
+                      href={`#home`}
+                      className={`text-dark group-hover:text-primary mx-8 flex py-2 text-base`}
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li className={`group`}>
+                    <Link
+                      href={`#about`}
+                      className={`text-dark group-hover:text-primary mx-8 flex py-2 text-base`}
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li className={`group`}>
+                    <Link
+                      href={`#product`}
+                      className={`text-dark group-hover:text-primary mx-8 flex py-2 text-base`}
+                    >
+                      Product
+                    </Link>
+                  </li>
+                  <li className={`group`}>
+                    <Link
+                      href={`#client`}
+                      className={`text-dark group-hover:text-primary mx-8 flex py-2 text-base`}
+                    >
+                      Client
+                    </Link>
+                  </li>
+                  <li className={`group`}>
+                    <Link
+                      href={`#contact`}
+                      className={`text-dark group-hover:text-primary mx-8 py-2 text-base`}
+                    >
+                      contact
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -173,6 +240,24 @@ export default function Home() {
         </div>
       </section>
       {/* Section About finish*/}
+
+      {/*Section Portofolio Start*/}
+      <section id={`product`} className={`bg-slate-100 pb-16 pt-36`}>
+        <div className={`container`}></div>
+      </section>
+      {/*Section Portofolio End*/}
+
+      {/*Section Portofolio Start*/}
+      <section id={`client`} className={``}>
+        <div className={`container`}></div>
+      </section>
+      {/*Section Portofolio End*/}
+
+      {/*Section Portofolio Start*/}
+      <section id={`contact`} className={``}>
+        <div className={`container`}></div>
+      </section>
+      {/*Section Portofolio End*/}
     </>
   );
 }
