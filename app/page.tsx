@@ -75,23 +75,29 @@ export default function Home() {
       <section id={`about`} className={`pb-32 pt-36`}>
         <div className={`container`}>
           <div className={`flex flex-wrap`}>
-            <div className={`mb-10 w-full px-4`}>
+            <div className={`mb-10 w-full px-4 lg:w-1/2`}>
               <h4 className={`text-primary mb-3 font-bold uppercase`}>
                 About Us
               </h4>
-              <h2 className={`text-dark mb-5 max-w-md text-3xl font-bold`}>
+              <h2
+                className={`text-dark mb-5 max-w-md text-3xl font-bold lg:text-5xl`}
+              >
                 It's Start with...
               </h2>
-              <p className={`text-secondary max-w-xl text-base font-medium`}>
+              <p
+                className={`text-secondary max-w-xl text-base font-medium lg:text-lg`}
+              >
                 {companyHistory}
               </p>
             </div>
-            <div className={`w-full px-4`}>
-              <h4 className={`text-dark mb-4 text-2xl font-semibold`}>
+            <div className={`w-full px-4 lg:w-1/2`}>
+              <h4
+                className={`text-dark lg:pt- mb-4 text-2xl font-semibold lg:text-3xl`}
+              >
                 Let's Connect!
               </h4>
               <p
-                className={`text-secondary mb-6 max-w-xl text-base font-medium`}
+                className={`text-secondary mb-6 max-w-xl text-base font-medium lg:text-lg`}
               >
                 {companyHistory}
               </p>
