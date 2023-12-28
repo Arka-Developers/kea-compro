@@ -243,7 +243,71 @@ export default function Home() {
 
       {/*Section Portofolio Start*/}
       <section id={`product`} className={`bg-slate-100 pb-16 pt-36`}>
-        <div className={`container`}></div>
+        <div className={`container`}>
+          <div className={`w-full px-4`}>
+            <div className={`mx-auto mb-16 max-w-xl text-center`}>
+              <h4 className={`text-primary mb-2 text-lg font-semibold`}>
+                Product
+              </h4>
+              <h2 className={`text-dark mb-4 text-3xl font-bold`}>
+                Our Main Product
+              </h2>
+              <p className={`text-md text-secondary font-medium`}>
+                {companySelfDefinition}
+              </p>
+            </div>
+
+            {/*  item card*/}
+            <div
+              className={`flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12`}
+            >
+              <div className={`mb-12 w-1/2 p-4`}>
+                <div className={`overflow-hidden rounded-md shadow-md`}>
+                  <img src={`/next.svg`} alt={`product`} width={`w-full`} />
+                </div>
+                <h3 className={`text-dark mb-3 mt-5 text-xl font-semibold`}>
+                  Product 1
+                </h3>
+                <p className={`text-secondary text-base font-medium`}>
+                  {companySelfDefinition}
+                </p>
+              </div>
+              <div className={`mb-12 w-1/2 p-4`}>
+                <div className={`overflow-hidden rounded-md shadow-md`}>
+                  <img src={`/next.svg`} alt={`product`} width={`w-full`} />
+                </div>
+                <h3 className={`text-dark mb-3 mt-5 text-xl font-semibold`}>
+                  Product 2
+                </h3>
+                <p className={`text-secondary text-base font-medium`}>
+                  {companySelfDefinition}
+                </p>
+              </div>
+              <div className={`mb-12 w-1/2 p-4`}>
+                <div className={`overflow-hidden rounded-md shadow-md`}>
+                  <img src={`/next.svg`} alt={`product`} width={`w-full`} />
+                </div>
+                <h3 className={`text-dark mb-3 mt-5 text-xl font-semibold`}>
+                  Product 3
+                </h3>
+                <p className={`text-secondary text-base font-medium`}>
+                  {companySelfDefinition}
+                </p>
+              </div>
+              <div className={`mb-12 w-1/2 p-4`}>
+                <div className={`overflow-hidden rounded-md shadow-md`}>
+                  <img src={`/next.svg`} alt={`product`} width={`w-full`} />
+                </div>
+                <h3 className={`text-dark mb-3 mt-5 text-xl font-semibold`}>
+                  Product 4
+                </h3>
+                <p className={`text-secondary text-base font-medium`}>
+                  {companySelfDefinition}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       {/*Section Portofolio End*/}
 
