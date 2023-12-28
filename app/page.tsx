@@ -92,7 +92,7 @@ export default function Home() {
             </div>
             <div className={`w-full px-4 lg:w-1/2`}>
               <h4
-                className={`text-dark lg:pt- mb-4 text-2xl font-semibold lg:text-3xl`}
+                className={`text-dark mb-4 text-2xl font-semibold lg:pt-10 lg:text-3xl`}
               >
                 Let's Connect!
               </h4>
