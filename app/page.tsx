@@ -202,7 +202,7 @@ export default function Home() {
               <h2
                 className={`text-dark mb-5 max-w-md text-3xl font-bold lg:text-5xl`}
               >
-                It's Start with...
+                Its Start with...
               </h2>
               <p
                 className={`text-secondary max-w-xl text-base font-medium lg:text-lg`}
@@ -214,7 +214,7 @@ export default function Home() {
               <h4
                 className={`text-dark mb-4 text-2xl font-semibold lg:pt-10 lg:text-3xl`}
               >
-                Let's Connect!
+                Lets Connect!
               </h4>
               <p
                 className={`text-secondary mb-6 max-w-xl text-base font-medium lg:text-lg`}
