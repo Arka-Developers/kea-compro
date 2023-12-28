@@ -1,6 +1,6 @@
-import { headerDefinition } from '@/lib/definition';
+// import { headerDefinition } from '@/lib/definition';
 
-export const headerData: headerDefinition = {
+export const headerData = {
   companyName: 'Kea Berkah Makmur',
   companySelfDefinition:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
