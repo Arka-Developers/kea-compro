@@ -65,7 +65,7 @@ export default function Home() {
                 id={'hamburger'}
                 name={`hamburger`}
                 type={`button`}
-                className={`absolute right-4 block`}
+                className={`absolute right-4 block lg:hidden`}
               >
                 <span
                   className={`hamburger-line origin-top-left transition duration-300 ease-in-out`}
@@ -79,9 +79,9 @@ export default function Home() {
               </button>
               <nav
                 id={`nav-menu`}
-                className={`absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg`}
+                className={`absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:max-w-xl lg:rounded-none lg:bg-transparent lg:shadow-none `}
               >
-                <ul className={`block`}>
+                <ul className={`block lg:flex`}>
                   <li className={`group`}>
                     <Link
                       href={`#home`}
@@ -117,7 +117,7 @@ export default function Home() {
                   <li className={`group`}>
                     <Link
                       href={`#contact`}
-                      className={`text-dark group-hover:text-primary mx-8 py-2 text-base`}
+                      className={`text-dark group-hover:text-primary mx-8 flex py-2 text-base`}
                     >
                       contact
                     </Link>
