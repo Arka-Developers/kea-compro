@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { headerData } from '@/lib/const';
 import Link from 'next/link';
+import { Facebook, Instagram } from 'lucide-react';
 
 export default function Home() {
   const { companyName, companyCaption, companySelfDefinition, companyHistory } =
@@ -89,11 +90,25 @@ export default function Home() {
               <h4 className={`text-dark mb-4 text-2xl font-semibold`}>
                 Let's Connect!
               </h4>
-              <h2
+              <p
                 className={`text-secondary mb-6 max-w-xl text-base font-medium`}
               >
                 {companyHistory}
-              </h2>
+              </p>
+              <div className={`flex items-center`}>
+                <Link
+                  href={`#`}
+                  className={`hover:border-primary hover:bg-primary mr-3 flex h-9 w-9 items-center justify-center rounded-full border text-slate-300 hover:text-white`}
+                >
+                  <Instagram />
+                </Link>
+                <Link
+                  href={`#`}
+                  className={`hover:border-primary hover:bg-primary mr-3 flex h-9 w-9 items-center justify-center rounded-full border text-slate-300 hover:text-white`}
+                >
+                  <Facebook />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
