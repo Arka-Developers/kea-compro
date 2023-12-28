@@ -249,10 +249,12 @@ export default function Home() {
               <h4 className={`text-primary mb-2 text-lg font-semibold`}>
                 Product
               </h4>
-              <h2 className={`text-dark mb-4 text-3xl font-bold`}>
+              <h2
+                className={`text-dark mb-4 text-3xl font-bold sm:text-4xl lg:text-5xl`}
+              >
                 Our Main Product
               </h2>
-              <p className={`text-md text-secondary font-medium`}>
+              <p className={`text-md text-secondary font-medium md:text-lg`}>
                 {companySelfDefinition}
               </p>
             </div>
@@ -311,11 +313,38 @@ export default function Home() {
       </section>
       {/*Section Portofolio End*/}
 
-      {/*Section Portofolio Start*/}
-      <section id={`client`} className={``}>
-        <div className={`container`}></div>
+      {/*Section clients Start*/}
+      <section id={`client`} className={`bg-blue-900 pb-32 pt-36`}>
+        <div className={`container`}>
+          <div className={`w-full px-4`}>
+            <div className={`mx-auto mb-16 max-w-xl text-center`}>
+              <h4 className={`text-primary mb-2 text-lg font-semibold`}>
+                Clients
+              </h4>
+              <h2
+                className={`mb-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl`}
+              >
+                Our Happy Clients
+              </h2>
+              <p className={`text-md text-dark font-medium md:text-lg`}>
+                {companySelfDefinition}
+              </p>
+            </div>
+          </div>
+
+          <div className={`w-full px-4`}>
+            <div className={`flex flex-wrap items-center justify-center`}>
+              <Link
+                href={`#`}
+                className={`mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0`}
+              >
+                <img src={`/next.svg`} alt={`product`} width={`w-full`} />
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
-      {/*Section Portofolio End*/}
+      {/*Section clients End*/}
 
       {/*Section Portofolio Start*/}
       <section id={`contact`} className={``}>
