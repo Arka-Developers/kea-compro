@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 import Image from 'next/image';
 import { headerData } from '@/lib/const';
 import Link from 'next/link';
@@ -11,39 +11,39 @@ export default function Home() {
   const words = companyCaption.split(' ');
   const extractedText = words.slice(1).join(' ');
 
-  useEffect(() => {
-    window.onscroll = function () {
-      const header = document.querySelector(`header`);
-      const fixedNav = header.offsetTop;
-
-      if (window.pageYOffset > fixedNav) {
-        header.classList.add('navbar-fixed');
-      } else {
-        header.classList.remove('navbar-fixed');
-      }
-    };
-  }, [window]);
-
-  useEffect(() => {
-    // Make sure to check if document is defined before using it
-    const hamburger = document.querySelector(`#hamburger`);
-    const navMenu = document.querySelector(`#nav-menu`);
-
-    if (hamburger) {
-      hamburger.addEventListener('click', function () {
-        hamburger.classList.toggle(`hamburger-active`);
-        navMenu.classList.toggle(`hidden`);
-        console.log(`clicked`);
-      });
-    }
-
-    // Clean up the event listener when the component is unmounted
-    return () => {
-      hamburger.removeEventListener('click', function () {
-        hamburger.classList.toggle(`hamburger-active`);
-      });
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.onscroll = function () {
+  //     const header = document.querySelector(`header`);
+  //     const fixedNav = header.offsetTop;
+  //
+  //     if (window.pageYOffset > fixedNav) {
+  //       header.classList.add('navbar-fixed');
+  //     } else {
+  //       header.classList.remove('navbar-fixed');
+  //     }
+  //   };
+  // }, [window]);
+  //
+  // useEffect(() => {
+  //   // Make sure to check if document is defined before using it
+  //   const hamburger = document.querySelector(`#hamburger`);
+  //   const navMenu = document.querySelector(`#nav-menu`);
+  //
+  //   if (hamburger) {
+  //     hamburger.addEventListener('click', function () {
+  //       hamburger.classList.toggle(`hamburger-active`);
+  //       navMenu.classList.toggle(`hidden`);
+  //       console.log(`clicked`);
+  //     });
+  //   }
+  //
+  //   // Clean up the event listener when the component is unmounted
+  //   return () => {
+  //     hamburger.removeEventListener('click', function () {
+  //       hamburger.classList.toggle(`hamburger-active`);
+  //     });
+  //   };
+  // }, []);
   return (
     <>
       {/*header Start */}
