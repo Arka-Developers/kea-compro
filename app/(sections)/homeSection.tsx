@@ -5,8 +5,7 @@ import { headerRef } from '@/lib/script';
 import { headerData } from '@/lib/const';
 
 export const HomeSection = () => {
-  const { companyName, companyCaption, companySelfDefinition, companyHistory } =
-    headerData;
+  const { companyName, companyCaption, companySelfDefinition } = headerData;
   const words = companyCaption.split(' ');
   const extractedText = words.slice(1).join(' ');
 
