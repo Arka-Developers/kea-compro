@@ -1,27 +1,24 @@
 'use client';
-import Image from 'next/image';
 import { headerData } from '@/lib/const';
 import Link from 'next/link';
 import { Facebook, Instagram } from 'lucide-react';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
 export default function Home() {
   const { companyName, companyCaption, companySelfDefinition, companyHistory } =
     headerData;
   const words = companyCaption.split(' ');
   const extractedText = words.slice(1).join(' ');
-  const navRef = useRef();
-  const headerRef = useRef(null);
-  const aboutRef = useRef(null);
-  const productRef = useRef(null);
-  const clientRef = useRef(null);
-  const contactRef = useRef(null);
+  const navRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const productRef = useRef<HTMLDivElement>(null);
+  const clientRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const scrollToHome = () => {
     if (headerRef.current) {
       headerRef.current.scrollIntoView();
-    } else {
-      console.error('headerRef.current is null');
     }
   };
   const scrollToAbout = () => {
@@ -178,11 +175,12 @@ export default function Home() {
               <h1
                 className={`text-base font-semibold text-primary md:text-xl lg:text-2xl`}
               >
-                Hello Everyone! we are {/*<span*/}
-                {/*  className={`mt-1 block text-4xl font-bold text-dark lg:text-5xl`}*/}
-                {/*>*/}
-                {/*  {companyName}*/}
-                {/*</span>*/}
+                Hello Everyone! we are{' '}
+                <span
+                  className={`mt-1 block text-4xl font-bold text-dark lg:text-5xl`}
+                >
+                  {companyName}
+                </span>
               </h1>
               <h2
                 className={`mb-5 text-lg font-medium text-secondary lg:text-2xl`}
