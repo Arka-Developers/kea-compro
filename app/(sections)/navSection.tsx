@@ -7,8 +7,8 @@ import {
   scrollToHome,
   scrollToProduct,
 } from '@/lib/script';
-import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 
 export const NavSection = () => {
   scrollCheck();
@@ -20,12 +20,18 @@ export const NavSection = () => {
       <div className={`container`}>
         <div className={`relative flex items-center justify-between`}>
           <div className={`px-4`}>
-            <Link
-              href={`#home`}
-              className={`block py-6 text-lg font-bold text-primary`}
+            <button
+              onClick={scrollToHome}
+              className={`mx-8 flex py-2 text-base text-dark group-hover:text-primary`}
             >
-              logo KEA
-            </Link>
+              <Image
+                src={'/keaLogo.png'}
+                alt='product'
+                width={50}
+                height={50}
+                style={{ width: '100%' }}
+              />
+            </button>
           </div>
           <div className={`flex items-center px-4`}>
             <button

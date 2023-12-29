@@ -44,7 +44,7 @@ export const HomeSection = () => {
             <div className={`relative mt-10 lg:right-0 lg:mt-9`}>
               <div className='w-full'>
                 <Image
-                  src='/keaLogo.png'
+                  src={'/keaLogo.png'}
                   alt='product'
                   width={300}
                   height={300}
