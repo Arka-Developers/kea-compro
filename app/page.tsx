@@ -2,19 +2,26 @@
 import { headerData } from '@/lib/const';
 import Link from 'next/link';
 import { Facebook, Instagram } from 'lucide-react';
-import React, { useRef } from 'react';
+import React from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   const { companyName, companyCaption, companySelfDefinition, companyHistory } =
     headerData;
   const words = companyCaption.split(' ');
   const extractedText = words.slice(1).join(' ');
-  const navRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const productRef = useRef<HTMLDivElement>(null);
-  const clientRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
+  // const navRef = useRef<HTMLDivElement>(null);
+  // const headerRef = useRef<HTMLDivElement>(null);
+  // const aboutRef = useRef<HTMLDivElement>(null);
+  // const productRef = useRef<HTMLDivElement>(null);
+  // const clientRef = useRef<HTMLDivElement>(null);
+  // const contactRef = useRef<HTMLDivElement>(null);
+  const navRef = React.createRef<HTMLDivElement>();
+  const headerRef = React.createRef<HTMLDivElement>();
+  const aboutRef = React.createRef<HTMLDivElement>();
+  const productRef = React.createRef<HTMLDivElement>();
+  const clientRef = React.createRef<HTMLDivElement>();
+  const contactRef = React.createRef<HTMLDivElement>();
 
   const scrollToHome = () => {
     if (headerRef.current) {
@@ -45,14 +52,11 @@ export default function Home() {
     if (typeof window !== 'undefined') {
       window.onscroll = function () {
         const header = navRef.current;
-        if (typeof header !== 'undefined') {
-          const fixedNav = header.offsetTop;
-
-          if (window.scrollY > fixedNav) {
-            header.classList.add('navbar-fixed');
-          } else {
-            header.classList.remove('navbar-fixed');
-          }
+        const fixedNav = header ? header.offsetTop : 0; // Use a default value, like 0
+        if (window.scrollY > fixedNav) {
+          header?.classList.add('navbar-fixed');
+        } else {
+          header?.classList.remove('navbar-fixed');
         }
       };
     }
@@ -200,11 +204,15 @@ export default function Home() {
             </div>
             <div className={`w-full self-end px-4 lg:w-1/2`}>
               <div className={`relative mt-10 lg:right-0 lg:mt-9`}>
-                <img
-                  src='/next.svg'
-                  alt='Picture of the author'
-                  className={`mx-auto max-w-full`}
-                />
+                <div className='w-full'>
+                  <Image
+                    src='/next.svg'
+                    alt='product'
+                    width={300}
+                    height={300}
+                    style={{ width: '100%' }}
+                  />
+                </div>
                 <span
                   className={`absolute -bottom-40 left-1/2 -z-10 -translate-x-1/2 md:scale-125`}
                 >
@@ -306,7 +314,15 @@ export default function Home() {
             >
               <div className={`mb-12 w-1/2 p-4`}>
                 <div className={`overflow-hidden rounded-md shadow-md`}>
-                  <img src={`/next.svg`} alt={`product`} width={`w-full`} />
+                  <div className='w-full'>
+                    <Image
+                      src='/next.svg'
+                      alt='product'
+                      width={300}
+                      height={300}
+                      style={{ width: '100%' }}
+                    />
+                  </div>
                 </div>
                 <h3 className={`mb-3 mt-5 text-xl font-semibold text-dark`}>
                   Product 1
@@ -317,7 +333,15 @@ export default function Home() {
               </div>
               <div className={`mb-12 w-1/2 p-4`}>
                 <div className={`overflow-hidden rounded-md shadow-md`}>
-                  <img src={`/next.svg`} alt={`product`} width={`w-full`} />
+                  <div className='w-full'>
+                    <Image
+                      src='/next.svg'
+                      alt='product'
+                      width={300}
+                      height={300}
+                      style={{ width: '100%' }}
+                    />
+                  </div>
                 </div>
                 <h3 className={`mb-3 mt-5 text-xl font-semibold text-dark`}>
                   Product 2
@@ -328,7 +352,15 @@ export default function Home() {
               </div>
               <div className={`mb-12 w-1/2 p-4`}>
                 <div className={`overflow-hidden rounded-md shadow-md`}>
-                  <img src={`/next.svg`} alt={`product`} width={`w-full`} />
+                  <div className='w-full'>
+                    <Image
+                      src='/next.svg'
+                      alt='product'
+                      width={300}
+                      height={300}
+                      style={{ width: '100%' }}
+                    />
+                  </div>
                 </div>
                 <h3 className={`mb-3 mt-5 text-xl font-semibold text-dark`}>
                   Product 3
@@ -339,7 +371,15 @@ export default function Home() {
               </div>
               <div className={`mb-12 w-1/2 p-4`}>
                 <div className={`overflow-hidden rounded-md shadow-md`}>
-                  <img src={`/next.svg`} alt={`product`} width={`w-full`} />
+                  <div className='w-full'>
+                    <Image
+                      src='/next.svg'
+                      alt='product'
+                      width={300}
+                      height={300}
+                      style={{ width: '100%' }}
+                    />
+                  </div>
                 </div>
                 <h3 className={`mb-3 mt-5 text-xl font-semibold text-dark`}>
                   Product 4
@@ -383,7 +423,15 @@ export default function Home() {
                 href={`#`}
                 className={`mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0`}
               >
-                <img src={`/next.svg`} alt={`product`} width={`w-full`} />
+                <div className='w-full'>
+                  <Image
+                    src='/next.svg'
+                    alt='product'
+                    width={300}
+                    height={300}
+                    style={{ width: '100%' }}
+                  />
+                </div>
               </Link>
             </div>
           </div>
