@@ -44,7 +44,7 @@ export const HomeSection = () => {
             <div className={`relative mt-10 lg:right-0 lg:mt-9`}>
               <div className='w-full'>
                 <Image
-                  src='/next.svg'
+                  src='/keaLogo.png'
                   alt='product'
                   width={300}
                   height={300}
@@ -52,7 +52,7 @@ export const HomeSection = () => {
                 />
               </div>
               <span
-                className={`absolute -bottom-40 left-1/2 -z-10 -translate-x-1/2 md:scale-125`}
+                className={`absolute bottom-10 left-1/2 -z-10 -translate-x-1/2 md:scale-125`}
               >
                 <svg
                   width={400}
