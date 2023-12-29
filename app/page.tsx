@@ -1,28 +1,55 @@
-// 'use client';
+'use client';
 import Image from 'next/image';
 import { headerData } from '@/lib/const';
 import Link from 'next/link';
 import { Facebook, Instagram } from 'lucide-react';
-import { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export default function Home() {
   const { companyName, companyCaption, companySelfDefinition, companyHistory } =
     headerData;
   const words = companyCaption.split(' ');
   const extractedText = words.slice(1).join(' ');
+  const navRef = useRef();
+  const headerRef = useRef(null);
+  const aboutRef = useRef(null);
+  const productRef = useRef(null);
+  const clientRef = useRef(null);
+  const contactRef = useRef(null);
 
-  // useEffect(() => {
-  //   window.onscroll = function () {
-  //     const header = document.querySelector(`header`);
-  //     const fixedNav = header.offsetTop;
-  //
-  //     if (window.pageYOffset > fixedNav) {
-  //       header.classList.add('navbar-fixed');
-  //     } else {
-  //       header.classList.remove('navbar-fixed');
-  //     }
-  //   };
-  // }, [window]);
+  const scrollToHome = () => {
+    headerRef.current.scrollIntoView();
+  };
+  const scrollToAbout = () => {
+    aboutRef.current.scrollIntoView();
+  };
+  const scrollToProduct = () => {
+    productRef.current.scrollIntoView();
+  };
+  const scrollToClient = () => {
+    clientRef.current.scrollIntoView();
+  };
+  const scrollToContact = () => {
+    contactRef.current.scrollIntoView();
+  };
+  const scrollCheck = () => {
+    if (typeof window !== 'undefined') {
+      window.onscroll = function () {
+        const header = navRef.current;
+        if (typeof header !== 'undefined') {
+          const fixedNav = header.offsetTop;
+
+          if (window.scrollY > fixedNav) {
+            header.classList.add('navbar-fixed');
+          } else {
+            header.classList.remove('navbar-fixed');
+          }
+        }
+      };
+    }
+  };
+
+  scrollCheck();
   //
   // useEffect(() => {
   //   // Make sure to check if document is defined before using it
@@ -48,6 +75,7 @@ export default function Home() {
     <>
       {/*header Start */}
       <header
+        ref={navRef}
         className={`absolute left-0 top-0 z-10 flex w-full items-center bg-transparent`}
       >
         <div className={`container`}>
@@ -55,7 +83,7 @@ export default function Home() {
             <div className={`px-4`}>
               <Link
                 href={`#home`}
-                className={`text-primary block py-6 text-lg font-bold`}
+                className={`block py-6 text-lg font-bold text-primary`}
               >
                 logo KEA
               </Link>
@@ -83,44 +111,44 @@ export default function Home() {
               >
                 <ul className={`block lg:flex`}>
                   <li className={`group`}>
-                    <Link
-                      href={`#home`}
-                      className={`text-dark group-hover:text-primary mx-8 flex py-2 text-base`}
+                    <button
+                      onClick={scrollToHome}
+                      className={`mx-8 flex py-2 text-base text-dark group-hover:text-primary`}
                     >
                       Home
-                    </Link>
+                    </button>
                   </li>
                   <li className={`group`}>
-                    <Link
-                      href={`#about`}
-                      className={`text-dark group-hover:text-primary mx-8 flex py-2 text-base`}
+                    <button
+                      onClick={scrollToAbout}
+                      className={`mx-8 flex py-2 text-base text-dark group-hover:text-primary`}
                     >
                       About
-                    </Link>
+                    </button>
                   </li>
                   <li className={`group`}>
-                    <Link
-                      href={`#product`}
-                      className={`text-dark group-hover:text-primary mx-8 flex py-2 text-base`}
+                    <button
+                      onClick={scrollToProduct}
+                      className={`mx-8 flex py-2 text-base text-dark group-hover:text-primary`}
                     >
                       Product
-                    </Link>
+                    </button>
                   </li>
                   <li className={`group`}>
-                    <Link
-                      href={`#client`}
-                      className={`text-dark group-hover:text-primary mx-8 flex py-2 text-base`}
+                    <button
+                      onClick={scrollToClient}
+                      className={`mx-8 flex py-2 text-base text-dark group-hover:text-primary`}
                     >
                       Client
-                    </Link>
+                    </button>
                   </li>
                   <li className={`group`}>
-                    <Link
-                      href={`#contact`}
-                      className={`text-dark group-hover:text-primary mx-8 flex py-2 text-base`}
+                    <button
+                      onClick={scrollToContact}
+                      className={`mx-8 flex py-2 text-base text-dark group-hover:text-primary`}
                     >
-                      contact
-                    </Link>
+                      Contact
+                    </button>
                   </li>
                 </ul>
               </nav>
@@ -131,32 +159,31 @@ export default function Home() {
       {/*header Finish */}
 
       {/* section hero start */}
-      <section id={`home`} className={`pt-36`}>
+      <section ref={headerRef} id={`home`} className={`pt-36`}>
         <div className={`container`}>
           <div className={`flex flex-wrap`}>
             <div className={`w-full self-center px-4 lg:w-1/2`}>
               <h1
-                className={`text-primary text-base font-semibold md:text-xl lg:text-2xl`}
+                className={`text-base font-semibold text-primary md:text-xl lg:text-2xl`}
               >
-                Hello Everyone! we are{' '}
-                <span
-                  className={`text-dark mt-1 block text-4xl font-bold lg:text-5xl`}
-                >
-                  {companyName}
-                </span>
+                Hello Everyone! we are {/*<span*/}
+                {/*  className={`mt-1 block text-4xl font-bold text-dark lg:text-5xl`}*/}
+                {/*>*/}
+                {/*  {companyName}*/}
+                {/*</span>*/}
               </h1>
               <h2
-                className={`text-secondary mb-5 text-lg font-medium lg:text-2xl`}
+                className={`mb-5 text-lg font-medium text-secondary lg:text-2xl`}
               >
                 {`${words[0]} `}
                 <span className={`text-dark`}>{extractedText}</span>
               </h2>
-              <p className={`text-secondary mb-10 font-medium leading-relaxed`}>
+              <p className={`mb-10 font-medium leading-relaxed text-secondary`}>
                 {companySelfDefinition}
               </p>
               <Link
                 href={`#`}
-                className={`bg-primary rounded-full px-8 py-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg`}
+                className={`rounded-full bg-primary px-8 py-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg`}
               >
                 Contact us
               </Link>
@@ -192,45 +219,45 @@ export default function Home() {
       {/*Section Hero finish*/}
 
       {/*Section About Start*/}
-      <section id={`about`} className={`pb-32 pt-36`}>
+      <section ref={aboutRef} id={`about`} className={`pb-32 pt-36`}>
         <div className={`container`}>
           <div className={`flex flex-wrap`}>
             <div className={`mb-10 w-full px-4 lg:w-1/2`}>
-              <h4 className={`text-primary mb-3 font-bold uppercase`}>
+              <h4 className={`mb-3 font-bold uppercase text-primary`}>
                 About Us
               </h4>
               <h2
-                className={`text-dark mb-5 max-w-md text-3xl font-bold lg:text-5xl`}
+                className={`mb-5 max-w-md text-3xl font-bold text-dark lg:text-5xl`}
               >
                 Its Start with...
               </h2>
               <p
-                className={`text-secondary max-w-xl text-base font-medium lg:text-lg`}
+                className={`max-w-xl text-base font-medium text-secondary lg:text-lg`}
               >
                 {companyHistory}
               </p>
             </div>
             <div className={`w-full px-4 lg:w-1/2`}>
               <h4
-                className={`text-dark mb-4 text-2xl font-semibold lg:pt-10 lg:text-3xl`}
+                className={`mb-4 text-2xl font-semibold text-dark lg:pt-10 lg:text-3xl`}
               >
                 Lets Connect!
               </h4>
               <p
-                className={`text-secondary mb-6 max-w-xl text-base font-medium lg:text-lg`}
+                className={`mb-6 max-w-xl text-base font-medium text-secondary lg:text-lg`}
               >
                 {companyHistory}
               </p>
               <div className={`flex items-center`}>
                 <Link
                   href={`#`}
-                  className={`hover:border-primary hover:bg-primary mr-3 flex h-9 w-9 items-center justify-center rounded-full border text-slate-300 hover:text-white`}
+                  className={`mr-3 flex h-9 w-9 items-center justify-center rounded-full border text-slate-300 hover:border-primary hover:bg-primary hover:text-white`}
                 >
                   <Instagram />
                 </Link>
                 <Link
                   href={`#`}
-                  className={`hover:border-primary hover:bg-primary mr-3 flex h-9 w-9 items-center justify-center rounded-full border text-slate-300 hover:text-white`}
+                  className={`mr-3 flex h-9 w-9 items-center justify-center rounded-full border text-slate-300 hover:border-primary hover:bg-primary hover:text-white`}
                 >
                   <Facebook />
                 </Link>
@@ -241,20 +268,24 @@ export default function Home() {
       </section>
       {/* Section About finish*/}
 
-      {/*Section Portofolio Start*/}
-      <section id={`product`} className={`bg-slate-100 pb-16 pt-36`}>
+      {/*Section Product Start*/}
+      <section
+        ref={productRef}
+        id={`product`}
+        className={`bg-slate-100 pb-16 pt-36`}
+      >
         <div className={`container`}>
           <div className={`w-full px-4`}>
             <div className={`mx-auto mb-16 max-w-xl text-center`}>
-              <h4 className={`text-primary mb-2 text-lg font-semibold`}>
+              <h4 className={`mb-2 text-lg font-semibold text-primary`}>
                 Product
               </h4>
               <h2
-                className={`text-dark mb-4 text-3xl font-bold sm:text-4xl lg:text-5xl`}
+                className={`mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl`}
               >
                 Our Main Product
               </h2>
-              <p className={`text-md text-secondary font-medium md:text-lg`}>
+              <p className={`text-md font-medium text-secondary md:text-lg`}>
                 {companySelfDefinition}
               </p>
             </div>
@@ -267,10 +298,10 @@ export default function Home() {
                 <div className={`overflow-hidden rounded-md shadow-md`}>
                   <img src={`/next.svg`} alt={`product`} width={`w-full`} />
                 </div>
-                <h3 className={`text-dark mb-3 mt-5 text-xl font-semibold`}>
+                <h3 className={`mb-3 mt-5 text-xl font-semibold text-dark`}>
                   Product 1
                 </h3>
-                <p className={`text-secondary text-base font-medium`}>
+                <p className={`text-base font-medium text-secondary`}>
                   {companySelfDefinition}
                 </p>
               </div>
@@ -278,10 +309,10 @@ export default function Home() {
                 <div className={`overflow-hidden rounded-md shadow-md`}>
                   <img src={`/next.svg`} alt={`product`} width={`w-full`} />
                 </div>
-                <h3 className={`text-dark mb-3 mt-5 text-xl font-semibold`}>
+                <h3 className={`mb-3 mt-5 text-xl font-semibold text-dark`}>
                   Product 2
                 </h3>
-                <p className={`text-secondary text-base font-medium`}>
+                <p className={`text-base font-medium text-secondary`}>
                   {companySelfDefinition}
                 </p>
               </div>
@@ -289,10 +320,10 @@ export default function Home() {
                 <div className={`overflow-hidden rounded-md shadow-md`}>
                   <img src={`/next.svg`} alt={`product`} width={`w-full`} />
                 </div>
-                <h3 className={`text-dark mb-3 mt-5 text-xl font-semibold`}>
+                <h3 className={`mb-3 mt-5 text-xl font-semibold text-dark`}>
                   Product 3
                 </h3>
-                <p className={`text-secondary text-base font-medium`}>
+                <p className={`text-base font-medium text-secondary`}>
                   {companySelfDefinition}
                 </p>
               </div>
@@ -300,10 +331,10 @@ export default function Home() {
                 <div className={`overflow-hidden rounded-md shadow-md`}>
                   <img src={`/next.svg`} alt={`product`} width={`w-full`} />
                 </div>
-                <h3 className={`text-dark mb-3 mt-5 text-xl font-semibold`}>
+                <h3 className={`mb-3 mt-5 text-xl font-semibold text-dark`}>
                   Product 4
                 </h3>
-                <p className={`text-secondary text-base font-medium`}>
+                <p className={`text-base font-medium text-secondary`}>
                   {companySelfDefinition}
                 </p>
               </div>
@@ -311,14 +342,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/*Section Portofolio End*/}
+      {/*Section Product End*/}
 
       {/*Section clients Start*/}
-      <section id={`client`} className={`bg-blue-900 pb-32 pt-36`}>
+      <section
+        ref={clientRef}
+        id={`client`}
+        className={`bg-blue-900 pb-32 pt-36`}
+      >
         <div className={`container`}>
           <div className={`w-full px-4`}>
             <div className={`mx-auto mb-16 max-w-xl text-center`}>
-              <h4 className={`text-primary mb-2 text-lg font-semibold`}>
+              <h4 className={`mb-2 text-lg font-semibold text-primary`}>
                 Clients
               </h4>
               <h2
@@ -326,7 +361,7 @@ export default function Home() {
               >
                 Our Happy Clients
               </h2>
-              <p className={`text-md text-dark font-medium md:text-lg`}>
+              <p className={`text-md font-medium text-dark md:text-lg`}>
                 {companySelfDefinition}
               </p>
             </div>
@@ -346,11 +381,11 @@ export default function Home() {
       </section>
       {/*Section clients End*/}
 
-      {/*Section Portofolio Start*/}
-      <section id={`contact`} className={``}>
+      {/*Section Contact Start*/}
+      <section ref={contactRef} id={`contact`} className={``}>
         <div className={`container`}></div>
       </section>
-      {/*Section Portofolio End*/}
+      {/*Section Contact End*/}
     </>
   );
 }
