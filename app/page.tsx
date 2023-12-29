@@ -18,19 +18,31 @@ export default function Home() {
   const contactRef = useRef(null);
 
   const scrollToHome = () => {
-    headerRef.current.scrollIntoView();
+    if (headerRef.current) {
+      headerRef.current.scrollIntoView();
+    } else {
+      console.error('headerRef.current is null');
+    }
   };
   const scrollToAbout = () => {
-    aboutRef.current.scrollIntoView();
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView();
+    }
   };
   const scrollToProduct = () => {
-    productRef.current.scrollIntoView();
+    if (productRef.current) {
+      productRef.current.scrollIntoView();
+    }
   };
   const scrollToClient = () => {
-    clientRef.current.scrollIntoView();
+    if (clientRef.current) {
+      clientRef.current.scrollIntoView();
+    }
   };
   const scrollToContact = () => {
-    contactRef.current.scrollIntoView();
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView();
+    }
   };
   const scrollCheck = () => {
     if (typeof window !== 'undefined') {
