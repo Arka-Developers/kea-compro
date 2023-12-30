@@ -2,7 +2,6 @@ import {
   navRef,
   scrollCheck,
   scrollToAbout,
-  scrollToClient,
   scrollToContact,
   scrollToHome,
   scrollToProduct,

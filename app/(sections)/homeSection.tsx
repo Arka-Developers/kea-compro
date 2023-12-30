@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
 import { headerRef, scrollToContact } from '@/lib/script';
@@ -35,6 +34,7 @@ export const HomeSection = () => {
               {companySelfDefinition}
             </p>
             <Button
+              placeholder={true}
               onClick={scrollToContact}
               className={`rounded-full bg-primary px-8 py-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg`}
             >
