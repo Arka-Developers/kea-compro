@@ -7,7 +7,7 @@ import { headerData } from '@/lib/const';
 export const AboutSection = () => {
   const { companyHistory } = headerData;
   return (
-    <section ref={aboutRef} id={`about`} className={`pb-32 pt-36`}>
+    <section ref={aboutRef} id={`about`} className={`bg-cyan-100 pb-32 pt-36`}>
       <div className={`container`}>
         <div className={`flex flex-wrap`}>
           <div className={`mb-10 w-full px-4 lg:w-1/2`}>
@@ -39,13 +39,13 @@ export const AboutSection = () => {
             <div className={`flex items-center`}>
               <Link
                 href={`#`}
-                className={`mr-3 flex h-9 w-9 items-center justify-center rounded-full border text-slate-300 hover:border-primary hover:bg-primary hover:text-white`}
+                className={`text-slate-300 mr-3 flex h-9 w-9 items-center justify-center rounded-full border hover:border-primary hover:bg-primary hover:text-white`}
               >
                 <Instagram />
               </Link>
               <Link
                 href={`#`}
-                className={`mr-3 flex h-9 w-9 items-center justify-center rounded-full border text-slate-300 hover:border-primary hover:bg-primary hover:text-white`}
+                className={`text-slate-300 mr-3 flex h-9 w-9 items-center justify-center rounded-full border hover:border-primary hover:bg-primary hover:text-white`}
               >
                 <Facebook />
               </Link>
