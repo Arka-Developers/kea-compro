@@ -1,8 +1,14 @@
 import { clientRef } from '@/lib/script';
-import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import React from 'react';
 import { headerData } from '@/lib/const';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 export const ClientsSection = () => {
   const { companySelfDefinition } = headerData;
@@ -31,23 +37,60 @@ export const ClientsSection = () => {
 
         <div className={`w-full px-4`}>
           <div className={`flex flex-wrap items-center justify-center`}>
-            <Link
-              href={`#`}
-              className={`mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0`}
-            >
-              <div className='w-full'>
-                <Image
-                  src='/next.svg'
-                  alt='product'
-                  width={300}
-                  height={300}
-                  style={{ width: '100%' }}
-                />
-              </div>
-            </Link>
+            <CarouselWithContent />
           </div>
         </div>
       </div>
     </section>
   );
 };
+
+export function CarouselWithContent() {
+  const slidesPerView: number = 3;
+  return (
+    <Swiper
+      modules={[Autoplay]}
+      spaceBetween={50}
+      slidesPerView={slidesPerView}
+      autoplay={true}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <SwiperSlide>
+        <img
+          src='https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80'
+          alt='image 1'
+          className='h-full w-full object-cover'
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img
+          src='https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80'
+          alt='image 1'
+          className='h-full w-full object-cover'
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img
+          src='https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80'
+          alt='image 1'
+          className='h-full w-full object-cover'
+        />
+      </SwiperSlide>{' '}
+      <SwiperSlide>
+        <img
+          src='https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80'
+          alt='image 1'
+          className='h-full w-full object-cover'
+        />
+      </SwiperSlide>{' '}
+      <SwiperSlide>
+        <img
+          src='https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80'
+          alt='image 1'
+          className='h-full w-full object-cover'
+        />
+      </SwiperSlide>
+    </Swiper>
+  );
+}
