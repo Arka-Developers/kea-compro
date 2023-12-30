@@ -21,11 +21,20 @@ export const headerData: headerDefinition = {
       productPicture: 'string',
     },
   ],
-  contact: {
-    contactName: 'string',
-    contactPhone: 'string',
-    contactAddress: 'string',
-  },
+  contact: [
+    {
+      contactName: 'Head Office',
+      contactPhone: '(021) 5555 5555',
+      contactAddress:
+        'Jl. Flamboyan No 16, Karet Kuningan, Setiabudi, Jakarta Selatan 13150',
+    },
+    {
+      contactName: 'Pool Office',
+      contactPhone: '(021) 5555 5555',
+      contactAddress:
+        'Jl. Flamboyan No 16, Karet Kuningan, Setiabudi, Jakarta Selatan 13150',
+    },
+  ],
   client: [
     {
       clientName: 'string',

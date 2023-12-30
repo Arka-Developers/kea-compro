@@ -4,10 +4,10 @@ import React from 'react';
 import { HomeSection } from '@/app/(sections)/homeSection';
 import { AboutSection } from '@/app/(sections)/aboutSection';
 import { ClientsSection } from '@/app/(sections)/clientsSection';
-import { ContactSection } from '@/app/(sections)/contactSection';
 import { ProductSection } from '@/app/(sections)/productSection';
 import { NavSection } from '@/app/(sections)/navSection';
 import { ThemeProvider } from '@material-tailwind/react';
+import { FooterSection } from '@/app/(sections)/footerSection';
 
 export default function Home() {
   //
@@ -39,7 +39,7 @@ export default function Home() {
         <AboutSection />
         <ProductSection />
         <ClientsSection />
-        <ContactSection />
+        <FooterSection />
       </ThemeProvider>
     </>
   );

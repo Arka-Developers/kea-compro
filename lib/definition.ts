@@ -35,5 +35,5 @@ export interface headerDefinition {
   companyHistory: string;
   productCatalog: productCatalogDefinition[];
   client: clientDefinition[];
-  contact: contactDefinition;
+  contact: contactDefinition[];
 }
