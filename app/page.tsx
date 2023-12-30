@@ -7,6 +7,7 @@ import { ClientsSection } from '@/app/(sections)/clientsSection';
 import { ContactSection } from '@/app/(sections)/contactSection';
 import { ProductSection } from '@/app/(sections)/productSection';
 import { NavSection } from '@/app/(sections)/navSection';
+import { ThemeProvider } from '@material-tailwind/react';
 
 export default function Home() {
   //
@@ -32,12 +33,14 @@ export default function Home() {
   // }, []);
   return (
     <>
-      <NavSection />
-      <HomeSection />
-      <AboutSection />
-      <ProductSection />
-      <ClientsSection />
-      <ContactSection />
+      <ThemeProvider>
+        <NavSection />
+        <HomeSection />
+        <AboutSection />
+        <ProductSection />
+        <ClientsSection />
+        <ContactSection />
+      </ThemeProvider>
     </>
   );
 }
