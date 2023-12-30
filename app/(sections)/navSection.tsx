@@ -81,14 +81,6 @@ export const NavSection = () => {
                 </li>
                 <li className={`group`}>
                   <button
-                    onClick={scrollToClient}
-                    className={`mx-8 flex py-2 text-base text-dark group-hover:text-primary`}
-                  >
-                    Client
-                  </button>
-                </li>
-                <li className={`group`}>
-                  <button
                     onClick={scrollToContact}
                     className={`mx-8 flex py-2 text-base text-dark group-hover:text-primary`}
                   >

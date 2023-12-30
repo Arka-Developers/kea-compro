@@ -16,7 +16,7 @@ export const ClientsSection = () => {
     <section
       ref={clientRef}
       id={`client`}
-      className={`bg-blue-900 pb-32 pt-36`}
+      className={`bg-cyan-100 pb-32 pt-36`}
     >
       <div className={`container`}>
         <div className={`w-full px-4`}>

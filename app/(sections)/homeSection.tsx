@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
-import { headerRef } from '@/lib/script';
+import { headerRef, scrollToContact } from '@/lib/script';
 import { headerData } from '@/lib/const';
+import { Button } from '@material-tailwind/react';
 
 export const HomeSection = () => {
   const { companyName, companyCaption, companySelfDefinition } = headerData;
@@ -33,12 +34,12 @@ export const HomeSection = () => {
             <p className={`mb-10 font-medium leading-relaxed text-secondary`}>
               {companySelfDefinition}
             </p>
-            <Link
-              href={`#`}
+            <Button
+              onClick={scrollToContact}
               className={`rounded-full bg-primary px-8 py-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg`}
             >
               Contact us
-            </Link>
+            </Button>
           </div>
           <div className={`w-full self-end px-4 lg:w-1/2`}>
             <div className={`relative mt-10 lg:right-0 lg:mt-9`}>
