@@ -37,8 +37,80 @@ export const headerData: headerDefinition = {
   ],
   client: [
     {
-      clientName: 'string',
-      clientPic: 'string',
+      clientName: 'AjeIndonesia.png',
+      clientPic: '/clientLogo/AjeIndonesia.png',
+    },
+    {
+      clientName: 'BerlinaTBK.png',
+      clientPic: '/clientLogo/BerlinaTBK.png',
+    },
+    {
+      clientName: 'Diamond.png',
+      clientPic: '/clientLogo/Diamond.png',
+    },
+    {
+      clientName: 'DuaKelinci.png',
+      clientPic: '/clientLogo/DuaKelinci.png',
+    },
+    {
+      clientName: 'Godrej.png',
+      clientPic: '/clientLogo/Godrej.png',
+    },
+    {
+      clientName: 'Hero.png',
+      clientPic: '/clientLogo/Hero.png',
+    },
+    {
+      clientName: 'Hilon.png',
+      clientPic: '/clientLogo/Hilon.png',
+    },
+    {
+      clientName: 'IMLTech.jpg',
+      clientPic: '/clientLogo/IMLTech.jpg',
+    },
+    {
+      clientName: 'JExpress.png',
+      clientPic: '/clientLogo/JExpress.png',
+    },
+    {
+      clientName: 'JnT.png',
+      clientPic: '/clientLogo/JnT.png',
+    },
+    {
+      clientName: 'Jotun.png',
+      clientPic: '/clientLogo/Jotun.png',
+    },
+    {
+      clientName: 'Lazada.png',
+      clientPic: '/clientLogo/Lazada.png',
+    },
+    {
+      clientName: 'MuliaRaya.png',
+      clientPic: '/clientLogo/MuliaRaya.png',
+    },
+    {
+      clientName: 'Paxel.png',
+      clientPic: '/clientLogo/Paxel.png',
+    },
+    {
+      clientName: 'Sentralindo.png',
+      clientPic: '/clientLogo/Sentralindo.png',
+    },
+    {
+      clientName: 'Shipper.png',
+      clientPic: '/clientLogo/Shipper.png',
+    },
+    {
+      clientName: 'Shopee.png',
+      clientPic: '/clientLogo/Shopee.png',
+    },
+    {
+      clientName: 'Sicepat.png',
+      clientPic: '/clientLogo/Sicepat.png',
+    },
+    {
+      clientName: 'Wilmar.png',
+      clientPic: '/clientLogo/Wilmar.png',
     },
   ],
 };

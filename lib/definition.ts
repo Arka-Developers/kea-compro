@@ -13,7 +13,7 @@ interface productCatalogDefinition {
   productPicture: string;
 }
 
-interface clientDefinition {
+export interface clientDefinition {
   clientName: string;
   clientPic: string;
 }

@@ -37,8 +37,8 @@ export default function Home() {
         <NavSection />
         <HomeSection />
         <AboutSection />
-        <ProductSection />
         <ClientsSection />
+        <ProductSection />
         <FooterSection />
       </ThemeProvider>
     </>

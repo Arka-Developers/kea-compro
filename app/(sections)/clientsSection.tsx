@@ -9,15 +9,13 @@ import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Image from 'next/image';
+import { clientDefinition } from '@/lib/definition';
 
 export const ClientsSection = () => {
-  const { companySelfDefinition } = headerData;
+  const { client } = headerData;
   return (
-    <section
-      ref={clientRef}
-      id={`client`}
-      className={`bg-cyan-100 pb-32 pt-36`}
-    >
+    <section ref={clientRef} id={`client`} className={` pb-32 pt-36`}>
       <div className={`container`}>
         <div className={`w-full px-4`}>
           <div className={`mx-auto mb-16 max-w-xl text-center`}>
@@ -25,19 +23,16 @@ export const ClientsSection = () => {
               Clients
             </h4>
             <h2
-              className={`mb-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl`}
+              className={`mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-4xl`}
             >
-              Our Happy Clients
+              Clients that used our services
             </h2>
-            <p className={`text-md font-medium text-dark md:text-lg`}>
-              {companySelfDefinition}
-            </p>
           </div>
         </div>
 
         <div className={`w-full px-4`}>
           <div className={`flex flex-wrap items-center justify-center`}>
-            <CarouselWithContent />
+            <CarouselWithContent clients={client} />
           </div>
         </div>
       </div>
@@ -45,52 +40,45 @@ export const ClientsSection = () => {
   );
 };
 
-export function CarouselWithContent() {
+export function CarouselWithContent({
+  clients,
+}: {
+  clients: clientDefinition[];
+}) {
   const slidesPerView: number = 3;
   return (
     <Swiper
       modules={[Autoplay]}
-      spaceBetween={50}
+      spaceBetween={10}
       slidesPerView={slidesPerView}
       autoplay={true}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      <SwiperSlide>
-        <img
-          src='https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80'
-          alt='image 1'
-          className='h-full w-full object-cover'
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src='https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80'
-          alt='image 1'
-          className='h-full w-full object-cover'
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src='https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80'
-          alt='image 1'
-          className='h-full w-full object-cover'
-        />
-      </SwiperSlide>{' '}
-      <SwiperSlide>
-        <img
-          src='https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80'
-          alt='image 1'
-          className='h-full w-full object-cover'
-        />
-      </SwiperSlide>{' '}
-      <SwiperSlide>
-        <img
-          src='https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80'
-          alt='image 1'
-          className='h-full w-full object-cover'
-        />
-      </SwiperSlide>
+      {clients.map((item, index) => (
+        <>
+          <SwiperSlide key={index}>
+            <div
+              style={{
+                alignItems: 'center',
+                justifyItems: 'center',
+                flex: 1,
+                flexDirection: 'column',
+              }}
+            >
+              <Image
+                src={item.clientPic}
+                alt={item.clientName}
+                width={100}
+                height={100}
+                style={{
+                  width: '30%',
+                }}
+              />
+            </div>
+          </SwiperSlide>
+        </>
+      ))}
     </Swiper>
   );
 }
