@@ -14,8 +14,10 @@ module.exports = withMT({
     },
     extend: {
       colors: {
-        primary: '#6366f1',
+        primary: '#00A1EA',
         secondary: '#64748b',
+        ternary: '#FF7E26',
+
         dark: '#0f172a',
       },
       screens: {

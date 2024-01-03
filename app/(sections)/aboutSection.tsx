@@ -7,11 +7,17 @@ import { headerData } from '@/lib/const';
 export const AboutSection = () => {
   const { companyHistory } = headerData;
   return (
-    <section ref={aboutRef} id={`about`} className={`bg-cyan-100 pb-32 pt-36`}>
+    <section
+      ref={aboutRef}
+      id={`about`}
+      className={`bg-orange-200 pb-32 pt-36`}
+    >
       <div className={`container`}>
         <div className={`flex flex-wrap`}>
           <div className={`mb-10 w-full px-4 lg:w-1/2`}>
-            <h4 className={`mb-3 font-bold uppercase text-primary`}>
+            <h4
+              className={`mb-3 font-bold uppercase text-primary md:text-xl lg:text-2xl`}
+            >
               About Us
             </h4>
             <h2

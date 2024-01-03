@@ -19,7 +19,9 @@ export const ClientsSection = () => {
       <div className={`container`}>
         <div className={`w-full px-4`}>
           <div className={`mx-auto mb-16 max-w-xl text-center`}>
-            <h4 className={`mb-2 text-lg font-semibold text-primary`}>
+            <h4
+              className={`mb-2 text-lg font-semibold text-primary md:text-xl lg:text-2xl`}
+            >
               Clients
             </h4>
             <h2
