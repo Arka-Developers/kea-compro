@@ -4,7 +4,7 @@ import { headerData } from '@/lib/const';
 import Image from 'next/image';
 
 export const FooterSection = () => {
-  const { contact } = headerData;
+  const { contact, marketing } = headerData;
   const contactLength = contact.length;
   return (
     <footer ref={contactRef} id={`footer`} className={`bg-dark pb-32 pt-36`}>
@@ -48,6 +48,25 @@ export const FooterSection = () => {
               height={100}
               // style={{ width: '100%' }}
             />
+            {marketing.map((item) => (
+              <>
+                <h4
+                  className={`mb-3 text-2xl font-bold uppercase text-primary`}
+                >
+                  Marketing Team {item.marketingPlace}
+                </h4>
+                <p
+                  className={`mb-4 max-w-xl text-base font-medium text-secondary lg:text-lg`}
+                >
+                  {item.marketingNumber}
+                </p>
+                <p
+                  className={`mb-4 max-w-xl text-base font-medium text-secondary lg:text-lg`}
+                >
+                  {item.marketingEmail}
+                </p>
+              </>
+            ))}
           </div>
         </div>
       </div>
