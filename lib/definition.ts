@@ -7,10 +7,18 @@ interface portofolioDefinition {
   portofolioDesc: string;
 }
 
+interface productTypeDefinition {
+  productTypeName: string;
+  productWeight: string;
+  productVolume: string;
+  productDesc: string;
+  productExample: string;
+}
+
 interface productCatalogDefinition {
   productName: string;
-  productDesc: string;
   productPicture: string;
+  productType: productTypeDefinition[];
 }
 
 export interface clientDefinition {
@@ -24,6 +32,11 @@ interface contactDefinition {
   contactAddress: string;
 }
 
+interface marketingDefinition {
+  marketingPlace: string;
+  marketingNumber: string;
+  marketingEmail: string;
+}
 export interface headerDefinition {
   companyName: string;
   companySelfDefinition: string;
@@ -36,4 +49,5 @@ export interface headerDefinition {
   productCatalog: productCatalogDefinition[];
   client: clientDefinition[];
   contact: contactDefinition[];
+  marketing: marketingDefinition[];
 }

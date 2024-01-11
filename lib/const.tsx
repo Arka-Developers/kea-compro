@@ -16,23 +16,110 @@ export const headerData: headerDefinition = {
   ],
   productCatalog: [
     {
-      productName: 'string',
-      productDesc: 'string',
-      productPicture: 'string',
+      productName: 'CDE',
+      productType: [
+        {
+          productTypeName: 'Box',
+          productDesc: 'Transportasi Muatan Box Tertutup',
+          productVolume: '9-10',
+          productWeight: '2000',
+          productExample: 'Universal Menyesuaikan Kapasitas',
+        },
+        {
+          productTypeName: 'Refeer',
+          productDesc:
+            'Transportasi Muatan box tertutup dengan pendingin untuk menjaga kesegaran muatan hingga 20 derajat celcius',
+          productVolume: '9',
+          productWeight: '2000',
+          productExample: 'Buah, Sayur, Frozen Food dan lain lain',
+        },
+        {
+          productTypeName: 'Long Box',
+          productDesc: 'Transportasi muatan box tertutup',
+          productVolume: '15-16',
+          productWeight: '3000',
+          productExample: 'Universal Menyesuaikan Kapasitas',
+        },
+      ],
+      productPicture: '/next.svg',
+    },
+    {
+      productName: 'CDD',
+      productType: [
+        {
+          productTypeName: 'Crane',
+          productDesc:
+            'Transportasi muatan terbuka dengan Crane untuk muatan berat',
+          productVolume: '-',
+          productWeight: '4000',
+          productExample: '-',
+        },
+        {
+          productTypeName: 'Box',
+          productDesc: 'Transportasi muatan box tertutup',
+          productVolume: '15-16',
+          productWeight: '6000',
+          productExample: 'Universal Menyesuaikan Kapasitas',
+        },
+        {
+          productTypeName: 'Long Box',
+          productDesc: 'Transportasi muatan box tertutup',
+          productVolume: '24, 28 & 31',
+          productWeight: '6000',
+          productExample: 'Universal Menyesuaikan Kapasitas',
+        },
+      ],
+      productPicture: '/next.svg',
+    },
+    {
+      productName: 'Wingbox',
+      productType: [
+        {
+          productTypeName: 'FFR',
+          productDesc:
+            'Transportasi Muatan box tertutup dengan bukaan pintu belakang dan samping',
+          productVolume: '36-42',
+          productWeight: '8000',
+          productExample: 'Universal Menyesuaikan Kapasitas',
+        },
+        {
+          productTypeName: 'FTR',
+          productDesc:
+            'Transportasi Muatan box tertutup dengan bukaan pintu belakang dan samping',
+          productVolume: '45-58',
+          productWeight: '10000',
+          productExample: 'Universal Menyesuaikan Kapasitas',
+        },
+        {
+          productTypeName: 'FVR',
+          productDesc:
+            'Transportasi Muatan box tertutup dengan bukaan pintu belakang dan samping',
+          productVolume: '60-64',
+          productWeight: '12000',
+          productExample: 'Universal} Menyesuaikan Kapasitas',
+        },
+      ],
+      productPicture: '/next.svg',
     },
   ],
   contact: [
     {
       contactName: 'Head Office',
-      contactPhone: '(021) 5555 5555',
-      contactAddress:
-        'Jl. Flamboyan No 16, Karet Kuningan, Setiabudi, Jakarta Selatan 13150',
+      contactPhone: '(021) 8983 0838',
+      contactAddress: 'Jl. Kasuari XIX Blok I No.8 Cikarang Utara, Kab Bekasi',
     },
     {
-      contactName: 'Pool Office',
-      contactPhone: '(021) 5555 5555',
+      contactName: 'Pool Office Bogor',
+      contactPhone: '(021) 8983 0838',
       contactAddress:
-        'Jl. Flamboyan No 16, Karet Kuningan, Setiabudi, Jakarta Selatan 13150',
+        'Jl. Raya Bojong Nangka, Bojong Nangka, Kec. Gunung Putri, Bogor, Jawa Barat 16963',
+    },
+  ],
+  marketing: [
+    {
+      marketingPlace: 'Jakarta',
+      marketingNumber: '085313763619',
+      marketingEmail: 'kea.berkahmakmur@gmail.com',
     },
   ],
   client: [
