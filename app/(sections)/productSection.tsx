@@ -3,7 +3,6 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { headerData } from '@/lib/const';
 import 'react-tooltip/dist/react-tooltip.css';
-import { Tooltip } from 'react-tooltip';
 import { productTypeDefinition } from '@/lib/definition';
 
 export const ProductSection = () => {
