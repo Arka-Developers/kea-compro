@@ -5,9 +5,10 @@ export const headerData: headerDefinition = {
   companySelfDefinition:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   companyCaption: 'Delivering Your Way',
-  vision: 'Menjadi mitra andalan bagi seluruh pelaku bisnis di Indonesia',
+  vision:
+    'Becoming a trusted partner for all business practitioners in Indonesia.',
   mission:
-    'Menjadi penyedia jasa transportasi barang yang profesional dengan kualitas dan bermutu tinggi',
+    'Becoming a professional provider of high-quality freight transportation services.',
 
   companyHistory: `KEA Berkah Makmur is a transportation services company specializing in land transport since 2016. We have emerged as a solution to support the smooth operational activities of business entities in Indonesia by providing professional and high-quality services. Our commitment revolves around ensuring customer satisfaction through prioritizing safety and delivering excellent service.\n\nAs a company dedicated to excellence, we take pride in our role as a reliable partner for businesses in Indonesia. Our journey began in 2016, and since then, we have been steadfast in providing top-notch transportation services, contributing to the success and efficiency of our clients' operations.\n\nAt KEA Berkah Makmur, we understand the importance of seamless logistics and transportation in the success of businesses. Therefore, we go beyond being a service provider; we strive to be a strategic ally, working closely with our clients to tailor solutions that meet their unique needs.\n\nOur team of professionals is committed to upholding the highest standards of safety and service quality. We prioritize Safety First and Good Service as our guiding principles, ensuring that every transport solution we provide is not only efficient but also secure.\n\nAs we continue to grow, we remain dedicated to enhancing our services, embracing innovation, and adapting to the evolving needs of our clients. KEA Berkah Makmur is not just a transportation company; we are your partner in success, committed to delivering excellence in every journey.`,
 
@@ -57,31 +58,32 @@ export const headerData: headerDefinition = {
       productType: [
         {
           productTypeName: 'Box',
-          productDesc: 'Transportasi Muatan Box Tertutup',
+          productDesc: 'Closed-box cargo transportation',
           productVolume: '9-10',
           productWeight: '2000',
-          productExample: 'Universal Menyesuaikan Kapasitas',
+          productExample: 'Universally adjustable capacity.',
           productPic: '/keaLogo.png',
         },
         {
           productTypeName: 'Refeer',
           productDesc:
-            'Transportasi Muatan box tertutup dengan pendingin untuk menjaga kesegaran muatan hingga 20 derajat celcius',
+            '\n' +
+            'Transportation of cargo in closed boxes with refrigeration to maintain the freshness of the cargo at up to 20 degrees Celsius.',
           productVolume: '9',
           productWeight: '2000',
-          productExample: 'Buah, Sayur, Frozen Food dan lain lain',
+          productExample: 'Fruits, Vegetables, Frozen Food, and others.',
           productPic: '/productPhoto/CDEREFEER.jpeg',
         },
         {
           productTypeName: 'Long Box',
-          productDesc: 'Transportasi muatan box tertutup',
+          productDesc: 'Closed-box cargo transportation',
           productVolume: '15-16',
           productWeight: '3000',
-          productExample: 'Universal Menyesuaikan Kapasitas',
+          productExample: 'Universally adjustable capacity.',
           productPic: '/keaLogo.png',
         },
       ],
-      productPicture: '/next.svg',
+      productPicture: '/productPhoto/CDEREFEER.jpeg',
     },
     {
       productName: 'CDD',
@@ -89,7 +91,7 @@ export const headerData: headerDefinition = {
         {
           productTypeName: 'Crane',
           productDesc:
-            'Transportasi muatan terbuka dengan Crane untuk muatan berat',
+            'Open cargo transportation with a crane for heavy loads.',
           productVolume: '-',
           productWeight: '4000',
           productExample: '-',
@@ -97,22 +99,22 @@ export const headerData: headerDefinition = {
         },
         {
           productTypeName: 'Box',
-          productDesc: 'Transportasi muatan box tertutup',
+          productDesc: 'Closed-box cargo transportation.',
           productVolume: '15-16',
           productWeight: '6000',
-          productExample: 'Universal Menyesuaikan Kapasitas',
+          productExample: 'Universally adjustable capacity.',
           productPic: '/productPhoto/CDD.jpeg',
         },
         {
           productTypeName: 'Long Box',
-          productDesc: 'Transportasi muatan box tertutup',
+          productDesc: 'Closed-box cargo transportation.',
           productVolume: '24, 28 & 31',
           productWeight: '6000',
-          productExample: 'Universal Menyesuaikan Kapasitas',
+          productExample: 'Universally adjustable capacity.',
           productPic: '/productPhoto/CDDL.jpeg',
         },
       ],
-      productPicture: '/next.svg',
+      productPicture: '/productPhoto/CDD.jpeg',
     },
     {
       productName: 'Wingbox',
@@ -123,7 +125,7 @@ export const headerData: headerDefinition = {
             'Transportasi Muatan box tertutup dengan bukaan pintu belakang dan samping',
           productVolume: '36-42',
           productWeight: '8000',
-          productExample: 'Universal Menyesuaikan Kapasitas',
+          productExample: 'Universally adjustable capacity.',
           productPic: '/productPhoto/WINGBOX.jpeg',
         },
         {
@@ -132,7 +134,7 @@ export const headerData: headerDefinition = {
             'Transportasi Muatan box tertutup dengan bukaan pintu belakang dan samping',
           productVolume: '45-58',
           productWeight: '10000',
-          productExample: 'Universal Menyesuaikan Kapasitas',
+          productExample: 'Universally adjustable capacity.',
           productPic: '/productPhoto/WINGBOX.jpeg',
         },
         {
@@ -145,7 +147,7 @@ export const headerData: headerDefinition = {
           productPic: '/productPhoto/WINGBOX.jpeg',
         },
       ],
-      productPicture: '/next.svg',
+      productPicture: '/productPhoto/WINGBOX.jpeg',
     },
   ],
   contact: [

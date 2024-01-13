@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { headerData } from '@/lib/const';
 import 'react-tooltip/dist/react-tooltip.css';
 import { productTypeDefinition } from '@/lib/definition';
+import { Tooltip } from 'react-tooltip';
 
 export const ProductSection = () => {
   const { companySelfDefinition, productCatalog } = headerData;
@@ -56,13 +57,11 @@ export const ProductSection = () => {
             {productCatalog.map((item) => (
               <div
                 key={item.productName}
-                className={`mb-12 w-1/2 transform p-4 transition duration-300 hover:scale-105`}
+                className={`mb-12 w-1/2 transform p-4`}
                 style={{ position: 'relative' }}
               >
-                <div
-                  className={`overflow-hidden rounded-md shadow-md hover:shadow-lg`}
-                >
-                  <div className='w-full'>
+                <div className='mb-4'>
+                  <div className='relative mx-auto h-80 w-80 overflow-hidden overflow-hidden rounded-md shadow-md transition duration-300 hover:scale-105 hover:shadow-lg'>
                     <Image
                       src={item.productPicture} // Replace with the actual path to your product picture
                       alt={item.productName}
@@ -88,7 +87,6 @@ export const ProductSection = () => {
                           {detailItem.productTypeName}
                         </div>
                       </a>
-                      {/* ... (your existing code for tooltip content) */}
                     </div>
                   ))}
                 </div>
@@ -100,26 +98,39 @@ export const ProductSection = () => {
       {/* Modal */}
       {selectedProductType && (
         <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
-          <div className='rounded-md bg-white p-6'>
-            <h2 className='mb-4 text-xl font-semibold'>
+          <div className='h-[600px] w-[600px] overflow-auto rounded-md bg-white p-6'>
+            <div className='mb-4'>
+              <div className='relative mx-auto h-80 w-80 overflow-hidden rounded-md'>
+                <Image
+                  src={selectedProductType.productPic}
+                  alt={selectedProductType.productTypeName}
+                  layout='fill'
+                  objectFit='cover'
+                  className='rounded-md'
+                />
+              </div>
+            </div>
+            <h2 className='mb-4 text-2xl font-semibold'>
               {selectedProductType.productTypeName}
             </h2>
             <p className='mb-2 text-base font-medium'>
               {selectedProductType.productDesc}
             </p>
             <p className='mb-2 text-sm'>
-              Volume: {selectedProductType.productVolume}, Weight:{' '}
-              {selectedProductType.productWeight}
+              <strong>Volume:</strong> {selectedProductType.productVolume},{' '}
+              <strong>Weight:</strong> {selectedProductType.productWeight}
             </p>
             <p className='text-sm'>
-              Example: {selectedProductType.productExample}
+              <strong>Example:</strong> {selectedProductType.productExample}
             </p>
-            <button
-              className='mt-4 rounded-md bg-primary px-4 py-2 text-white'
-              onClick={closeModal}
-            >
-              Close
-            </button>
+            <div className={`flex justify-end`}>
+              <button
+                className='mt-4 rounded-md bg-red-400 px-4 py-2 text-white'
+                onClick={closeModal}
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}
