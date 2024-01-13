@@ -7,7 +7,7 @@ interface portofolioDefinition {
   portofolioDesc: string;
 }
 
-interface productTypeDefinition {
+export interface productTypeDefinition {
   productTypeName: string;
   productWeight: string;
   productVolume: string;
@@ -37,6 +37,13 @@ interface marketingDefinition {
   marketingNumber: string;
   marketingEmail: string;
 }
+
+export interface timelineDefinition {
+  years: string;
+  name: string;
+  desc: string;
+}
+
 export interface headerDefinition {
   companyName: string;
   companySelfDefinition: string;
@@ -50,4 +57,5 @@ export interface headerDefinition {
   client: clientDefinition[];
   contact: contactDefinition[];
   marketing: marketingDefinition[];
+  timeline: timelineDefinition[];
 }

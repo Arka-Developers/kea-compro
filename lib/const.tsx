@@ -5,11 +5,48 @@ export const headerData: headerDefinition = {
   companySelfDefinition:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   companyCaption: 'Delivering Your Way',
-  vision: 'vision',
-  mission: 'mission',
-  companyHistory:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  goals: [{ goalsItem: 'goals' }],
+  vision: 'Menjadi mitra andalan bagi seluruh pelaku bisnis di Indonesia',
+  mission:
+    'Menjadi penyedia jasa transportasi barang yang profesional dengan kualitas dan bermutu tinggi',
+
+  companyHistory: `KEA Berkah Makmur is a transportation services company specializing in land transport since 2016. We have emerged as a solution to support the smooth operational activities of business entities in Indonesia by providing professional and high-quality services. Our commitment revolves around ensuring customer satisfaction through prioritizing safety and delivering excellent service.\n\nAs a company dedicated to excellence, we take pride in our role as a reliable partner for businesses in Indonesia. Our journey began in 2016, and since then, we have been steadfast in providing top-notch transportation services, contributing to the success and efficiency of our clients' operations.\n\nAt KEA Berkah Makmur, we understand the importance of seamless logistics and transportation in the success of businesses. Therefore, we go beyond being a service provider; we strive to be a strategic ally, working closely with our clients to tailor solutions that meet their unique needs.\n\nOur team of professionals is committed to upholding the highest standards of safety and service quality. We prioritize Safety First and Good Service as our guiding principles, ensuring that every transport solution we provide is not only efficient but also secure.\n\nAs we continue to grow, we remain dedicated to enhancing our services, embracing innovation, and adapting to the evolving needs of our clients. KEA Berkah Makmur is not just a transportation company; we are your partner in success, committed to delivering excellence in every journey.`,
+
+  goals: [
+    {
+      goalsItem:
+        'To be a leading and trusted provider of land transportation services in Indonesia, recognized for our commitment to excellence and customer satisfaction.',
+    },
+    {
+      goalsItem:
+        'To continuously enhance the quality of our services, incorporating innovative solutions and adapting to the evolving needs of our clients.',
+    },
+    {
+      goalsItem:
+        'To uphold the highest standards of safety in all our operations, prioritizing the well-being of our clients and ensuring the security of their transported goods.',
+    },
+  ],
+  timeline: [
+    {
+      years: '1998',
+      name: '',
+      desc: 'Passenger',
+    },
+    {
+      years: '2005',
+      name: 'CV EKKY ADITYA',
+      desc: 'Passenger',
+    },
+    {
+      years: '2012',
+      name: 'CV KEA BERKAH',
+      desc: 'Crane, Passenger',
+    },
+    {
+      years: '2019',
+      name: 'PT KEA BERKAH MAKMUR',
+      desc: 'Crane, Passenger, Unit Box',
+    },
+  ],
   portofolio: [
     { portofolioName: 'string', portofolioDesc: 'string' },
     { portofolioName: 'string', portofolioDesc: 'string' },
