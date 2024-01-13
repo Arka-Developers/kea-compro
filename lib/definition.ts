@@ -13,6 +13,7 @@ export interface productTypeDefinition {
   productVolume: string;
   productDesc: string;
   productExample: string;
+  productPic: string;
 }
 
 interface productCatalogDefinition {

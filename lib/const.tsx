@@ -61,6 +61,7 @@ export const headerData: headerDefinition = {
           productVolume: '9-10',
           productWeight: '2000',
           productExample: 'Universal Menyesuaikan Kapasitas',
+          productPic: '/keaLogo.png',
         },
         {
           productTypeName: 'Refeer',
@@ -69,6 +70,7 @@ export const headerData: headerDefinition = {
           productVolume: '9',
           productWeight: '2000',
           productExample: 'Buah, Sayur, Frozen Food dan lain lain',
+          productPic: '/productPhoto/CDEREFEER.jpeg',
         },
         {
           productTypeName: 'Long Box',
@@ -76,6 +78,7 @@ export const headerData: headerDefinition = {
           productVolume: '15-16',
           productWeight: '3000',
           productExample: 'Universal Menyesuaikan Kapasitas',
+          productPic: '/keaLogo.png',
         },
       ],
       productPicture: '/next.svg',
@@ -90,6 +93,7 @@ export const headerData: headerDefinition = {
           productVolume: '-',
           productWeight: '4000',
           productExample: '-',
+          productPic: '/productPhoto/CRANE.jpeg',
         },
         {
           productTypeName: 'Box',
@@ -97,6 +101,7 @@ export const headerData: headerDefinition = {
           productVolume: '15-16',
           productWeight: '6000',
           productExample: 'Universal Menyesuaikan Kapasitas',
+          productPic: '/productPhoto/CDD.jpeg',
         },
         {
           productTypeName: 'Long Box',
@@ -104,6 +109,7 @@ export const headerData: headerDefinition = {
           productVolume: '24, 28 & 31',
           productWeight: '6000',
           productExample: 'Universal Menyesuaikan Kapasitas',
+          productPic: '/productPhoto/CDDL.jpeg',
         },
       ],
       productPicture: '/next.svg',
@@ -118,6 +124,7 @@ export const headerData: headerDefinition = {
           productVolume: '36-42',
           productWeight: '8000',
           productExample: 'Universal Menyesuaikan Kapasitas',
+          productPic: '/productPhoto/WINGBOX.jpeg',
         },
         {
           productTypeName: 'FTR',
@@ -126,6 +133,7 @@ export const headerData: headerDefinition = {
           productVolume: '45-58',
           productWeight: '10000',
           productExample: 'Universal Menyesuaikan Kapasitas',
+          productPic: '/productPhoto/WINGBOX.jpeg',
         },
         {
           productTypeName: 'FVR',
@@ -134,6 +142,7 @@ export const headerData: headerDefinition = {
           productVolume: '60-64',
           productWeight: '12000',
           productExample: 'Universal} Menyesuaikan Kapasitas',
+          productPic: '/productPhoto/WINGBOX.jpeg',
         },
       ],
       productPicture: '/next.svg',
