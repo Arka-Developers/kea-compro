@@ -1,12 +1,30 @@
 import { productRef } from '@/lib/script';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import { headerData } from '@/lib/const';
 import 'react-tooltip/dist/react-tooltip.css';
 import { Tooltip } from 'react-tooltip';
+import { productTypeDefinition } from '@/lib/definition';
 
 export const ProductSection = () => {
   const { companySelfDefinition, productCatalog } = headerData;
+  const [selectedProductType, setSelectedProductType] = useState(null);
+
+  const openModal = (productTypeName: productTypeDefinition) => {
+    // Find the selected productType based on productTypeName
+    const selectedType = productCatalog
+      .map((product) => product.productType)
+      .flat()
+      // @ts-ignore
+      .find((type) => productTypeName === type.productTypeName);
+
+    // @ts-ignore
+    setSelectedProductType(selectedType);
+  };
+
+  const closeModal = () => {
+    setSelectedProductType(null);
+  };
   return (
     <section
       ref={productRef}
@@ -40,6 +58,7 @@ export const ProductSection = () => {
               <div
                 key={item.productName}
                 className={`mb-12 w-1/2 transform p-4 transition duration-300 hover:scale-105`}
+                style={{ position: 'relative' }}
               >
                 <div
                   className={`overflow-hidden rounded-md shadow-md hover:shadow-lg`}
@@ -59,12 +78,10 @@ export const ProductSection = () => {
                 </h3>
                 <div className={`flex flex-wrap items-center gap-2`}>
                   {item.productType.map((detailItem) => (
-                    <>
+                    <div key={detailItem.productTypeName} className={`mb-2`}>
                       <a
-                        data-tooltip-id={detailItem.productTypeName}
-                        data-tooltip-place={'bottom'}
-                        data-tooltip-variant='success'
-                        // data-tooltip-html={detailItem.productDesc}
+                        onClick={() => openModal(detailItem.productTypeName)}
+                        style={{ cursor: 'pointer' }}
                       >
                         <div
                           className={`cursor-pointer rounded-md bg-gray-200 p-2 text-base font-medium text-secondary`}
@@ -72,27 +89,8 @@ export const ProductSection = () => {
                           {detailItem.productTypeName}
                         </div>
                       </a>
-                      <Tooltip id={detailItem.productTypeName}>
-                        <div
-                          key={detailItem.productTypeName}
-                          className={`mb-2`}
-                        >
-                          <p className={`text-base font-medium text-white`}>
-                            {detailItem.productTypeName}
-                          </p>
-                          <p className={`text-sm text-white`}>
-                            {detailItem.productDesc}
-                          </p>
-                          <p className={`text-sm text-white`}>
-                            Volume: {detailItem.productVolume}, Weight:{' '}
-                            {detailItem.productWeight}
-                          </p>
-                          <p className={`text-sm text-white`}>
-                            Example: {detailItem.productExample}
-                          </p>
-                        </div>
-                      </Tooltip>
-                    </>
+                      {/* ... (your existing code for tooltip content) */}
+                    </div>
                   ))}
                 </div>
               </div>
@@ -100,6 +98,32 @@ export const ProductSection = () => {
           </div>
         </div>
       </div>
+      {/* Modal */}
+      {selectedProductType && (
+        <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
+          <div className='rounded-md bg-white p-6'>
+            <h2 className='mb-4 text-xl font-semibold'>
+              {selectedProductType.productTypeName}
+            </h2>
+            <p className='mb-2 text-base font-medium'>
+              {selectedProductType.productDesc}
+            </p>
+            <p className='mb-2 text-sm'>
+              Volume: {selectedProductType.productVolume}, Weight:{' '}
+              {selectedProductType.productWeight}
+            </p>
+            <p className='text-sm'>
+              Example: {selectedProductType.productExample}
+            </p>
+            <button
+              className='mt-4 rounded-md bg-primary px-4 py-2 text-white'
+              onClick={closeModal}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
