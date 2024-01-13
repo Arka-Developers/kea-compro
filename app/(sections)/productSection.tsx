@@ -1,6 +1,6 @@
 import { productRef } from '@/lib/script';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { headerData } from '@/lib/const';
 import 'react-tooltip/dist/react-tooltip.css';
 import { productTypeDefinition } from '@/lib/definition';
@@ -25,6 +25,25 @@ export const ProductSection = () => {
   const closeModal = () => {
     setSelectedProductType(null);
   };
+
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    const closeModalOnOutsideClick = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal();
+      }
+    };
+
+    // Add event listener when the component mounts
+    document.addEventListener('mousedown', closeModalOnOutsideClick);
+
+    // Remove event listener when the component unmounts
+    return () => {
+      document.removeEventListener('mousedown', closeModalOnOutsideClick);
+    };
+  }, []);
+
   return (
     <section
       ref={productRef}
@@ -61,7 +80,7 @@ export const ProductSection = () => {
                 style={{ position: 'relative' }}
               >
                 <div className='mb-4'>
-                  <div className='relative mx-auto h-80 w-80 overflow-hidden overflow-hidden rounded-md shadow-md transition duration-300 hover:scale-105 hover:shadow-lg'>
+                  <div className='relative mx-auto h-80 w-80 overflow-hidden rounded-md shadow-md transition duration-300 hover:scale-105 hover:shadow-lg'>
                     <Image
                       src={item.productPicture} // Replace with the actual path to your product picture
                       alt={item.productName}
@@ -98,7 +117,10 @@ export const ProductSection = () => {
       {/* Modal */}
       {selectedProductType && (
         <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
-          <div className='h-[600px] w-[600px] overflow-auto rounded-md bg-white p-6'>
+          <div
+            ref={modalRef}
+            className='h-[600px] w-[600px] overflow-auto rounded-md bg-white p-6'
+          >
             <div className='mb-4'>
               <div className='relative mx-auto h-80 w-80 overflow-hidden rounded-md'>
                 <Image
