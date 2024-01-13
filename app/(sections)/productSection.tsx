@@ -4,46 +4,42 @@ import React, { useEffect, useRef, useState } from 'react';
 import { headerData } from '@/lib/const';
 import 'react-tooltip/dist/react-tooltip.css';
 import { productTypeDefinition } from '@/lib/definition';
-import { Tooltip } from 'react-tooltip';
 
-export const ProductSection = () => {
+export const ProductSection: React.FC = () => {
   const { companySelfDefinition, productCatalog } = headerData;
-  const [selectedProductType, setSelectedProductType] = useState(null);
+  const [selectedProductType, setSelectedProductType] =
+    useState<productTypeDefinition | null>(null);
 
-  const openModal = (productTypeName: productTypeDefinition) => {
+  const openModal = (productTypeName: string) => {
     // Find the selected productType based on productTypeName
     const selectedType = productCatalog
       .map((product) => product.productType)
       .flat()
-      // @ts-ignore
       .find((type) => productTypeName === type.productTypeName);
 
     // @ts-ignore
-    setSelectedProductType(selectedType);
+    setSelectedProductType(selectedType || null);
   };
 
   const closeModal = () => {
     setSelectedProductType(null);
   };
 
-  const modalRef = useRef(null);
-
+  const modalRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    const closeModalOnOutsideClick = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
+    const closeModalOnOutsideClick = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
         closeModal();
       }
     };
-
-    // Add event listener when the component mounts
     document.addEventListener('mousedown', closeModalOnOutsideClick);
-
-    // Remove event listener when the component unmounts
     return () => {
       document.removeEventListener('mousedown', closeModalOnOutsideClick);
     };
   }, []);
-
   return (
     <section
       ref={productRef}
@@ -82,7 +78,7 @@ export const ProductSection = () => {
                 <div className='mb-4'>
                   <div className='relative mx-auto h-80 w-80 overflow-hidden rounded-md shadow-md transition duration-300 hover:scale-105 hover:shadow-lg'>
                     <Image
-                      src={item.productPicture} // Replace with the actual path to your product picture
+                      src={item.productPicture}
                       alt={item.productName}
                       width={300}
                       height={300}
