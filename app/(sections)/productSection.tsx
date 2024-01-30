@@ -67,7 +67,7 @@ export const ProductSection: React.FC = () => {
           {/*  item card*/}
 
           <div
-            className={`flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12`}
+            className={`flex flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12`}
           >
             {productCatalog.map((item) => (
               <div
